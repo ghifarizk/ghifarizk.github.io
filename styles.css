@@ -1,0 +1,1663 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: #F8F8F8;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------------- HOME SECTION --------------------------------------------------*/
+.background {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0)),url(pics/villaP.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* Konsistenkan Tinggi Navbar */
+.navbar {
+    height: 70px;
+    position: fixed;
+    width: 90%;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar Ketika Scroll */
+.navbar.scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.navbar.scrolled .display ul li a {
+    color: #333;
+}
+
+.navbar.scrolled .display .fa-bars {
+    color: #333;
+}
+
+.navbar.scrolled .display ul li a:after {
+    background-color: #6AA866;
+}
+
+.navbar img {
+    width: 85px;
+    margin-left: 5px;
+}
+
+.display {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.display ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.display ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 8px;
+    position: relative;
+}
+
+.display ul li a {
+    font-family: "SoDo Sans SemiBold";
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.display ul li a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #6AA866;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.display ul li a:hover::after {
+    width: 100%;
+}
+
+.display .fa-bars {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.display .fa-times {
+    display: none;
+}
+
+/* Sembunyikan ikon hamburger dan close pada layar lebih besar dari 768px */
+@media (min-width: 769px) {
+    #menu-icon, #close-icon {
+        display: none; /* Sembunyikan ikon */
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .background {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0)),url(pics/villaP.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+
+    .display .fa-bars {
+        display: block;
+    }
+
+    .display ul {
+        display: flex; /* Ubah dari 'none' ke 'flex' untuk memungkinkan transisi */
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 63px;
+        right: 0;
+        width: 100%;
+        height: 0; /* Awal dari tinggi 0 */
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-radius: 10px;
+        transition: height 0.3s ease-in-out; /* Transisi untuk animasi tinggi */
+    }
+
+    .display ul li {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+        opacity: 0; /* Awal dengan opacity 0 */
+        transform: translateY(-20px); /* Geser sedikit ke atas untuk animasi */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Transisi untuk animasi */
+    }
+
+    .display ul li a {
+        font-size: 14px;
+        color: #333;
+    }
+
+    /* Icon Close */
+    #close-icon {
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    /* Style ketika menu terbuka */
+    .navbar.menu-open {
+        background-color: #fff;
+    }
+
+    .navbar.menu-open .display ul {
+        height: 100vh; /* Ketinggian penuh ketika dibuka */
+    }
+
+    .navbar.menu-open .display ul li {
+        opacity: 1; /* Opacity penuh ketika dibuka */
+        transform: translateY(0); /* Kembali ke posisi asli */
+    }
+
+    .navbar.menu-open .display ul li a {
+        font-size: 20px;
+        color: #333;
+    }
+}
+
+/*-----TEXT BOX-----*/
+.text-box {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.text-box p {
+    margin: 0px 0 10px;
+    font-size: 15px;
+}
+
+.text-box a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1.5px solid #fff;
+    padding: 10px 30px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.text-box a:hover{
+    border: 1.5px solid #6AA866;
+    background: #6AA866;
+    transition: 0.5s;
+}
+
+/*-----RESPONSIVE TEXT BOX-----*/
+@media (max-width: 1024px) {
+    .text-box h1 {
+        font-size: 22px; /* Slightly smaller font size */
+    }
+
+    .text-box p {
+        font-size: 14px; /* Slightly smaller font size */
+    }
+
+    .text-box a {
+        padding: 8px 25px; /* Adjust padding */
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .text-box h1 {
+        font-size: 20px; /* Reduce font size further */
+    }
+
+    .text-box p {
+        font-size: 13px; /* Reduce font size further */
+    }
+
+    .text-box a {
+        padding: 7px 20px; /* Reduce padding */
+        font-size: 11px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-box h1 {
+        font-size: 15px; /* Even smaller font size */
+    }
+
+    .text-box p {
+        font-size: 11px; /* Even smaller font size */
+    }
+
+    .text-box a {
+        padding: 6px 18px; /* Further reduce padding */
+        font-size: 10px; /* Smaller font size */
+    }
+}
+
+/*-------------------------------------------------- ABOUT SECTION --------------------------------------------------*/
+.container-about {
+    text-align: center;
+}
+
+.about-section {
+    padding: 50px 20px;
+    color: #333;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: row; /* Mengatur elemen dalam baris untuk layar besar */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.about-section h2 {
+    font-size: 3rem; /* Ukuran font yang lebih besar untuk kesan kuat */
+    color: #000000; /* Warna kontras yang elegan */
+    font-weight: 600; /* Font yang sangat tebal */
+    letter-spacing: 1px; /* Jarak antar huruf untuk kesan modern */
+    z-index: 1; /* Mengatur agar berada di depan elemen dekoratif */
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-bottom: 10px; /* Ruang antara judul dan paragraf */
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 65%;
+    margin: 0 auto;
+    background: #f8f8f8;
+    padding: 15px;
+    color: #555;
+    position: relative;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    text-align: center; /* Teks rata kiri */
+}
+
+.about-section p:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivitas untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 20px;
+        flex-direction: column; /* Ubah ke kolom untuk layar kecil */
+        align-items: center; /* Pusatkan elemen secara vertikal */
+    }
+
+    .about-section h2 {
+        text-align: center; /* Teks rata tengah untuk layar kecil */
+        max-width: 100%;
+    }
+
+    .about-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+        max-width: 85%;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 0px;
+    }
+
+    .about-section h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-left : 0px;
+        margin-top: 222px;
+        margin-bottom: 0px;
+    }
+
+    .about-section p {
+        text-align: center;
+        font-size: 1rem;
+        max-width: 81%;
+        margin-bottom: 270px;
+    }
+}
+
+/*-------------------------------------------------- SERVICES SECTION --------------------------------------------------*/
+.container-services {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto; /* Agar container berada di tengah halaman */
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+.service-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Warna latar belakang untuk section */
+}
+
+.container-services h2 {
+    font-size: 3rem; /* Ukuran font yang lebih besar untuk kesan kuat */
+    color: #000000; /* Warna kontras yang elegan */
+    font-weight: 600; /* Font yang sangat tebal */
+    letter-spacing: 1px; /* Jarak antar huruf untuk kesan modern */
+    z-index: 1; /* Mengatur agar berada di depan elemen dekoratif */
+    margin-top: 50px;
+    margin-bottom: 0px; /* Ruang antara judul dan paragraf */
+}
+
+.container-services p {
+    font-size: 1rem;
+    color: #666666; /* Warna teks paragraf */
+    margin-top: 0px;
+    margin-bottom: 30px; /* Ruang di bawah paragraf */
+}
+
+/* Flexbox for Services */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Agar card bisa berpindah ke bawah jika layar kecil */
+    gap: 20px; /* Jarak antara card */
+}
+
+/* Styling for Each Service Box */
+.about-col {
+    flex-basis: calc(33.333% - 55px); /* 3 kolom dengan jarak 20px */
+    background: #f5fff4; /* Warna latar belakang yang lembut */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    transition: 0.5s;
+}
+
+.about-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+.about-col h3 {
+    font-size: 1.25rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.about-col p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Adjustments for Medium Screens */
+@media (max-width: 1024px) {
+    .container-services {
+        width: 80%; /* Menyesuaikan lebar container agar konsisten dengan yang lain */
+        padding: 20px; /* Sedikit lebih besar dari versi layar kecil */
+        margin-bottom: 170px; /* Tambah jarak bawah untuk layar medium */
+    }
+
+    .container-services h2 {
+        font-size: 3rem; /* Ukuran font sedikit lebih besar untuk judul */
+        margin-top: 120px; /* Menambah jarak atas sedikit */
+        margin-bottom: 15px; /* Menambah sedikit ruang di bawah */
+    }
+
+    .container-services p {
+        font-size: 1rem; /* Ukuran font sedikit lebih besar untuk paragraf */
+        margin-bottom: 25px; /* Sedikit lebih banyak margin bawah untuk kesesuaian */
+        padding: 0 15px; /* Sedikit lebih banyak padding di sisi kiri dan kanan */
+    }
+
+    .row {
+        flex-direction: column; /* Tetap kolom untuk tata letak layar sedang */
+        gap: 20px; /* Sedikit lebih banyak jarak antar elemen */
+        align-items: center; /* Tetap menyelaraskan elemen ke tengah */
+    }
+
+    .about-col {
+        flex-basis: calc(45% - 30px); /* 2 kolom dengan jarak antar card, lebih besar sedikit */
+        max-width: 600px; /* Sedikit lebih besar lebar maksimal card */
+        margin-bottom: 20px; /* Lebih banyak jarak bawah untuk card */
+        padding: 60px; /* Padding dalam card sedikit lebih besar */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lebih besar sedikit untuk efek halus */
+    }
+
+    .about-col h3 {
+        font-size: 1.75rem; /* Ukuran font sedikit lebih besar untuk judul */
+        margin-top: 5px; /* Menambah jarak atas sedikit */
+        margin-bottom: 15px; /* Lebih banyak margin bawah */
+    }
+
+    .about-col p {
+        font-size: 1rem; /* Ukuran font sedikit lebih besar untuk paragraf */
+        line-height: 1.6; /* Menjaga line-height sedikit lebih tinggi */
+        margin-bottom: 5px; /* Sedikit margin bawah untuk menghindari spasi berlebih */
+    }
+}
+
+@media (max-width: 850px) {
+    .container-services h2 {
+        font-size: 3rem; /* Ukuran font sedikit lebih besar untuk judul */
+        margin-top: 20px; /* Menambah jarak atas sedikit */
+        margin-bottom: 15px; /* Menambah sedikit ruang di bawah */
+    }
+}
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .container-services {
+        padding: 15px; /* Mengurangi padding agar lebih sesuai dengan layar kecil */
+        margin-bottom: 200px;
+    }
+
+    .container-services h2 {
+        font-size: 2.5rem; /* Ukuran font lebih kecil untuk judul */
+        margin-top: 30px; /* Mengurangi jarak atas */
+        margin-bottom: 10px; /* Memberikan sedikit ruang di bawah */
+    }
+
+    .container-services p {
+        font-size: 1rem; /* Ukuran font lebih kecil untuk paragraf */
+        margin-bottom: 20px; /* Mengurangi margin bawah untuk kesesuaian */
+        padding: 0 10px; /* Menambah sedikit padding di sisi kiri dan kanan */
+    }
+
+    .row {
+        flex-direction: column; /* Mengubah tata letak menjadi kolom untuk layar kecil */
+        gap: 15px; /* Mengurangi jarak antar elemen */
+        align-items: center; /* Menyelaraskan elemen ke tengah */
+    }
+
+    .about-col {
+        flex-basis: calc(45% - 20px); /* 2 kolom dengan jarak antar card */
+        max-width: 550px; /* Kontrol lebar maksimal card */
+        margin-bottom: 15px; /* Memberikan jarak bawah untuk card */
+        padding: 55px; /* Mengurangi padding dalam card */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Mengurangi bayangan untuk kesan lebih halus */
+    }
+
+    .about-col h3 {
+        font-size: 1.5rem; /* Ukuran font yang sedikit lebih kecil */
+        margin-top: 0px;
+        margin-bottom: 10px; /* Mengurangi margin bawah */
+    }
+
+    .about-col p {
+        font-size: 1rem; /* Ukuran font yang lebih kecil untuk paragraf */
+        line-height: 1.5; /* Sedikit mengurangi line-height untuk kesesuaian */
+        margin-bottom: 0px; /* Menghapus margin bawah untuk menghindari spasi berlebih */
+    }
+}
+
+@media (max-width: 480px) {
+    .container-services h2 {
+        font-size: 1.8rem; /* Ukuran font lebih kecil untuk layar lebih sempit */
+        margin-top: 130px; /* Mengurangi margin atas untuk menghemat ruang */
+        margin-bottom: 10px;
+    }
+
+    .container-services p {
+        font-size: 0.85rem; /* Ukuran font lebih kecil untuk paragraf */
+        padding: 0 5px; /* Mengurangi padding samping untuk kesesuaian layar */
+        margin-bottom: 15px; /* Mengurangi jarak bawah */
+    }
+
+    .row {
+        gap: 10px; /* Mengurangi jarak antar elemen untuk layar lebih kecil */
+    }
+
+    .about-col {
+        flex-basis: 100%; /* 1 kolom penuh untuk layar sempit */
+        margin-bottom: 10px; /* Sedikit jarak bawah antar card */
+        padding: 10px; /* Mengurangi padding dalam card */
+    }
+
+    .about-col h3 {
+        font-size: 1rem; /* Ukuran font yang lebih kecil */
+        margin-bottom: 8px; /* Margin bawah lebih kecil */
+    }
+
+    .about-col p {
+        font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk teks deskripsi */
+        line-height: 1.4; /* Mengurangi line-height */
+    }
+}
+
+@media (max-width: 420px) {
+    .container-services h2 {
+        font-size: 1.8rem; /* Ukuran font lebih kecil untuk layar lebih sempit */
+        margin-top: 90px; /* Mengurangi margin atas untuk menghemat ruang */
+        margin-bottom: 10px;
+    }
+
+    .container-services p {
+        font-size: 0.85rem; /* Ukuran font lebih kecil untuk paragraf */
+        padding: 0 5px; /* Mengurangi padding samping untuk kesesuaian layar */
+        margin-bottom: 15px; /* Mengurangi jarak bawah */
+    }
+
+    .row {
+        gap: 10px; /* Mengurangi jarak antar elemen untuk layar lebih kecil */
+    }
+
+    .about-col {
+        flex-basis: 100%; /* 1 kolom penuh untuk layar sempit */
+        margin-bottom: 10px; /* Sedikit jarak bawah antar card */
+        padding: 10px; /* Mengurangi padding dalam card */
+    }
+
+    .about-col h3 {
+        font-size: 1rem; /* Ukuran font yang lebih kecil */
+        margin-bottom: 8px; /* Margin bawah lebih kecil */
+    }
+
+    .about-col p {
+        font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk teks deskripsi */
+        line-height: 1.4; /* Mengurangi line-height */
+    }
+}
+
+/*-------------------------------------------------- GALLERY SECTION --------------------------------------------------*/
+/* Responsiveness for Gallery Section */
+.container-villa {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-top: 0px;
+    margin-bottom: 150px;
+}
+
+.villa-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.villa-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #43a047;
+}
+
+.villa-details {
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.gallery-section h2 {
+    font-size: 3rem; /* Ukuran font yang lebih besar untuk kesan kuat */
+    color: #000000; /* Warna kontras yang elegan */
+    font-weight: 600; /* Font yang sangat tebal */
+    letter-spacing: 1px; /* Jarak antar huruf untuk kesan modern */
+    z-index: 1; /* Mengatur agar berada di depan elemen dekoratif */
+    margin-top: 100px;
+    margin-bottom: 0px; /* Ruang antara judul dan paragraf */
+    text-align: center;
+}
+
+.gallery-section p {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.villa-details p {
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.villa-details h3 {
+    font-size: 22px;
+    color: #333333;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #6AA866;
+    border: 2px solid #6AA866;
+    border-radius: 10px;
+    padding: 12px 28px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+button:hover::after {
+    opacity: 1;
+}
+
+button:hover {
+    background-color: white;
+    color: #6AA866;
+    border-color: #6AA866;
+}
+
+/* Adjustments for Medium Screens */
+@media (max-width: 1024px) {
+    .container-villa {
+        padding: 10px; /* Sedikit lebih besar padding untuk layar medium */
+        flex-direction: column; /* Tetap kolom untuk tata letak layar sedang */
+        align-items: center; /* Menyelaraskan elemen ke tengah */
+    }
+
+    .villa-card {
+        margin: 15px 0; /* Menambah sedikit margin di antara card */
+        max-width: 85%; /* Memastikan card tetap responsif dan lebih lebar */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sedikit lebih besar bayangan */
+    }
+
+    .villa-card img {
+        border-bottom: 4px solid #43a047; /* Ukuran border sedikit lebih besar */
+    }
+
+    .villa-details {
+        padding: 20px; /* Sedikit lebih besar padding dalam card */
+    }
+
+    .gallery-section h2 {
+        font-size: 3rem; /* Ukuran font yang lebih besar untuk judul */
+        margin-top: 5px; /* Menambah sedikit jarak atas */
+        margin-bottom: 15px; /* Memberikan sedikit lebih ruang di bawah */
+    }
+
+    .gallery-section p {
+        font-size: 1.1rem; /* Ukuran font lebih besar untuk paragraf */
+        margin: 10px 15px; /* Sedikit lebih besar margin samping */
+    }
+
+    .villa-details h3 {
+        font-size: 1.4rem; /* Ukuran font yang lebih besar untuk judul villa */
+        margin: 10px 0; /* Sedikit lebih banyak margin bawah */
+    }
+
+    .villa-details p {
+        font-size: 1.1rem; /* Ukuran font yang lebih besar untuk detail villa */
+        margin-bottom: 10px; /* Sedikit lebih banyak jarak bawah */
+    }
+
+    button {
+        padding: 12px 25px; /* Sedikit lebih besar padding tombol */
+        font-size: 1rem; /* Ukuran font yang lebih besar untuk tombol */
+        margin-top: 15px; /* Sedikit lebih banyak margin atas */
+    }
+}
+
+@media (max-width: 768px) {
+    .container-villa {
+        padding: 15px; /* Mengurangi padding agar lebih sesuai dengan layar kecil */
+        flex-direction: column; /* Mengubah tata letak menjadi kolom */
+        align-items: center; /* Menyelaraskan elemen ke tengah */
+    }
+
+    .villa-card {
+        margin: 10px 0; /* Mengurangi margin di antara card */
+        max-width: 90%; /* Memastikan card lebih responsif */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Mengurangi bayangan */
+    }
+
+    .villa-card img {
+        border-bottom: 3px solid #43a047; /* Mengurangi ukuran border */
+    }
+
+    .villa-details {
+        padding: 15px; /* Mengurangi padding dalam card */
+    }
+
+    .gallery-section h2 {
+        font-size: 2.5rem; /* Ukuran font yang lebih kecil untuk judul */
+        margin-top: 0px; /* Mengurangi jarak atas */
+        margin-bottom: 10px; /* Memberikan sedikit ruang di bawah */
+    }
+
+    .gallery-section p {
+        font-size: 1rem; /* Ukuran font lebih kecil untuk paragraf */
+        margin: 0px 50px; /* Mengurangi margin samping */
+    }
+
+    .villa-details h3 {
+        font-size: 1.2rem; /* Ukuran font yang lebih kecil untuk judul villa */
+        margin: 5px 0; /* Mengurangi margin bawah */
+    }
+
+    .villa-details p {
+        font-size: 1rem; /* Ukuran font lebih kecil untuk detail villa */
+        margin-bottom: 5px; /* Sedikit jarak bawah */
+    }
+
+    button {
+        padding: 10px 20px; /* Mengurangi padding tombol */
+        font-size: 0.9rem; /* Ukuran font yang lebih kecil untuk tombol */
+        margin-top: 10px; /* Menambahkan margin atas */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container-villa {
+        margin-bottom: 100px;
+    }
+    .villa-card {
+        max-width: 100%;
+    }
+
+    .gallery-section h2 {
+        font-size: 1.8rem; /* Ukuran font lebih kecil untuk layar sangat kecil */
+        text-align: center;
+    }
+
+    .galeri-section p {
+        text-align: center;
+    }
+
+    .gallery-section h4,
+    .text-area h3,
+    .container-fasilitas h4 {
+        margin-left: 5px;
+        font-size: 1.2rem;
+    }
+
+    .text-area h6 {
+        margin-left: 5px;
+        font-size: 0.9rem;
+    }
+
+    .text-area p {
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+
+    .fasilitas-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*-----GALERI NEXT PAGE-----*/
+.navbar-galeri {
+    height: 70px;
+    position: fixed;
+    width: 90%;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-galeri img {
+    width: 85px;
+    margin-left: 5px;
+}
+
+.navbar-galeri.scrolled .display-galeri ul li a {
+    color: #6AA866;
+    border: 1.5px solid #6AA866;
+}
+
+.navbar-galeri.scrolled .display-galeri ul li a:hover {
+    border: 1.5px solid #ffd014;
+    color: #ffd014;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.background-villa-putih,
+.background-villa-limasan {
+    min-height: 55vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    letter-spacing: 3px;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0)), url(pics/vila.jpg);
+}
+
+.background-villa-limasan {
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0)), url(pics/limasan.jpg);
+}
+
+.display-galeri {
+    flex: 1;
+    text-align: right;
+}
+
+.display-galeri ul {
+    margin: 0;
+}
+
+.display-galeri ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 2px 8px;
+    position: relative;
+}
+
+.display-galeri ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1.5px solid #fff;
+    letter-spacing: 1.5px;
+    padding: 5px 15px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.display-galeri ul li a:hover {
+    border: 1.5px solid #6AA866;
+    background: #6AA866;
+    transition: 0.5s;
+}
+
+.text-area {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 80%;
+}
+
+.text-area h6 {
+    color: #808080;
+    letter-spacing: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.text-area h3 {
+    color: #808080;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: left;
+    letter-spacing: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.text-area p {
+    color: #808080;
+    font-size: 16px;
+}
+
+.container-gallery-fasilitas {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 35px;
+    justify-content: center;
+}
+
+.carousel-item {
+    width: 100%; /* Sesuaikan dengan lebar grid */
+    height: 395px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+}
+
+/* Tombol galeri */
+.carousel-button {
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 24px;
+}
+
+.carousel-button.prev {
+    left: 4.5px;
+}
+
+.carousel-button.next {
+    right: 4.5px;
+}
+
+.container-fasilitas {
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 150px;
+}
+
+.container-fasilitas h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #808080;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.fasilitas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Jarak antara item fasilitas */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 80%; /* Lebar maksimum kontainer agar sesuai dengan tata letak */
+}
+
+.fasilitas-list li {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 10px 15px;
+    color: #808080;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fasilitas-list img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.fasilitas-list li span {
+    font-size: 16px;
+    color: #444;
+}
+
+/* Carousel adjustments for small screens */
+@media (max-width: 480px) {
+    .background-villa-putih, .background-villa-limasan {
+        min-height: 30vh;
+    }
+
+    .container-gallery-fasilitas {
+        padding: 20px;
+        display: flex;
+        justify-content: center; /* Pusatkan kontainer */
+        align-items: center; /* Pusatkan secara vertikal */
+        flex-direction: column;
+    }
+
+    .carousel-item {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        object-fit: cover;
+        margin-bottom: 10px;
+        display: flex; /* Tambahkan Flexbox */
+        justify-content: center; /* Pusatkan gambar secara horizontal */
+        align-items: center; /* Pusatkan gambar secara vertikal */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto; /* Menjaga proporsi gambar */
+        display: block;
+        margin: 0 auto; /* Memastikan gambar tetap di tengah */
+    }
+
+    .carousel-button {
+        display: block;
+    }
+
+    .display-galeri ul {
+        margin: 0;
+    }
+
+    .display-galeri ul li {
+        padding: 2px 5px;
+    }
+
+    .display-galeri ul li a {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+
+    .text-area h6,
+    .text-area h3,
+    .text-area p {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .container-fasilitas {
+        margin-bottom: 100px;
+    }
+
+    .container-fasilitas h4 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .fasilitas-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        max-width: 80%;
+    }
+}
+
+
+/*-------------------------------------------------- CONTACT SECTION --------------------------------------------------*/
+.contact-section h2 {
+    text-align: center;
+    font-size: 3rem; /* Ukuran font yang lebih besar untuk kesan kuat */
+    color: #000000; /* Warna kontras yang elegan */
+    font-weight: 600; /* Font yang sangat tebal */
+    letter-spacing: 1px; /* Jarak antar huruf untuk kesan modern */
+    z-index: 1; /* Mengatur agar berada di depan elemen dekoratif */
+    margin-top: 150px;
+    margin-bottom: 0px; /* Ruang antara judul dan paragraf */
+}
+
+.contact-section h3 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    color: #666666; /* Warna teks paragraf */
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 30px; /* Ruang di bawah paragraf */
+}
+
+.contact-section .ph {
+    font-size: 1rem;
+    margin: 0px 30px; /* Mengurangi margin samping */
+    margin-bottom: 10px; /* Ruang di bawah paragraf */
+}
+
+.contact-container {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    width: 40%;
+    padding: 20px;
+    padding-bottom: 0px;
+    border-right: 1px solid #ddd;
+}
+
+.contact-info .info {
+    flex-direction: column;
+    align-items: center; /* Menyelaraskan ikon di tengah secara horizontal */
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+.contact-info .info-no {
+    flex-direction: column;
+    align-items: center; /* Menyelaraskan ikon di tengah secara horizontal */
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+.contact-info .info i {
+    font-size: 20px;
+    color: #6AA866;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.contact-info .info-no i {
+    font-size: 20px;
+    color: #6AA866;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.contact-info .info h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0px 0;
+    text-align: center;
+}
+
+.contact-info .info-no h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0px 0;
+    text-align: center;
+}
+
+.contact-info .info p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 35px;
+}
+
+.contact-info .info-no p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 0px;
+}
+
+.contact-info .info-no .pp {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.contact-info .info-no .p {
+    margin-bottom: 35px;
+}
+
+.info-no .line1 {
+    border: 0;
+    width: 170px;
+    height: 1px;
+    background-color: #000; /* Warna abu-abu muda untuk garis */
+    margin-top: 0px;
+    margin-bottom: 3px;
+}
+
+.contact-info .info .paragraph {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 0px;
+}
+
+.contact-form {
+    width: 70%;
+    padding: 20px;
+}
+
+.contact-form h3 {
+    font-size: 20px;
+    text-align: left;
+    color: #6AA866;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.contact-form p {
+    font-size: 14px;
+    color: #777;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    box-sizing: border-box; /* Pastikan padding termasuk dalam lebar elemen */
+    font-size: 14px;
+}
+
+.contact-form button {
+    width: 100%;
+    text-align: center;
+}
+
+.contact-link {
+    color: #777; /* Warna link */
+    display: inline-block;
+    text-decoration: none; /* Hilangkan garis bawah */
+    transition: color 0.5s ease, transform 0.3s ease; /* Efek transisi untuk perubahan warna dan ukuran */
+}
+
+.contact-link:hover {
+    color: #6AA866; /* Warna ketika dihover */
+    transform: scale(1.05); /* Efek zoom ketika dihover */
+}
+
+
+.map-container {
+    margin-top: 5px;
+    margin-bottom: 115px;
+    display: flex;
+    justify-content: center;
+}
+
+.map-container iframe {
+    width: 74%;
+    max-height: 220px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Media Styling */
+.social-media p {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img {
+    width: 70%;
+    height: auto;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* Adjustments for Medium Screens */
+@media (max-width: 1024px) {
+    .contact-container {
+        width: 80%; /* Lebar container yang lebih besar dibandingkan layar kecil */
+    }
+
+    .contact-info {
+        width: 45%; /* Menyesuaikan lebar bagian informasi agar tetap responsif */
+    }
+
+    .contact-section h2 {
+        font-size: 3rem; /* Ukuran font yang lebih besar untuk judul utama */
+        margin-top: 40px; /* Menambah sedikit margin atas */
+    }
+
+    .contact-section h3 {
+        font-size: 1.6rem; /* Ukuran font yang lebih besar untuk sub-judul */
+        margin-top: 25px; /* Menambah sedikit margin atas */
+    }
+
+    .contact-info .info h3,
+    .contact-info .info-no h3 {
+        font-size: 16px; /* Ukuran font yang lebih besar untuk informasi */
+    }
+
+    .contact-info .info p,
+    .contact-info .info-no p,
+    .contact-info .info-no .pp {
+        font-size: 15px; /* Ukuran font yang lebih besar untuk detail informasi */
+    }
+
+    .info-no .line1 {
+        width: 200px; /* Lebar garis yang lebih besar */
+        height: 1.5px; /* Tebal garis sedikit lebih besar */
+        background-color: #000;
+        margin: 10px auto; /* Lebih banyak spasi di atas dan bawah garis */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 15px; /* Ukuran font yang lebih besar untuk input */
+        padding: 10px; /* Padding lebih besar untuk kenyamanan */
+    }
+
+    .contact-form button {
+        font-size: 16px; /* Ukuran font yang lebih besar untuk tombol */
+        padding: 12px 20px; /* Padding yang lebih besar untuk tombol */
+    }
+
+    .map-container iframe {
+        max-height: 300px; /* Menambah tinggi maksimal peta */
+        width: 84%; /* Menyesuaikan lebar peta agar tetap responsif */
+    }
+}
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 81%;
+    }
+
+    .contact-info {
+        width: 40%;
+    }
+
+    .contact-section h2 {
+        font-size: 2.5rem; /* Ukuran font sedikit lebih kecil */
+        margin-top: 30px;
+    }
+
+    .contact-section h3 {
+        font-size: 1.4rem;
+        margin-top: 20px;
+    }
+
+    .contact-info .info h3,
+    .contact-info .info-no h3 {
+        font-size: 14px;
+    }
+
+    .contact-info .info p,
+    .contact-info .info-no p,
+    .contact-info .info-no .pp {
+        font-size: 13px;
+    }
+
+    .info-no .line1 {
+        width: 150px;
+        height: 1px;
+        background-color: #000;
+        margin: 5px auto; /* Garis horizontal di tengah dengan spasi yang tepat */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+    }
+
+    .map-container iframe {
+        max-height: 200px;
+        width: 86%; /* Menyesuaikan lebar peta */
+    }
+}
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 700px) {
+    /* Penyesuaian umum untuk kontainer kontak */
+    .contact-container {
+        flex-direction: column; /* Atur elemen dalam satu kolom */
+        padding: 10px; /* Kurangi padding untuk layar kecil */
+        margin: 0 auto; /* Pusatkan elemen di tengah */
+        width: 90%; /* Lebar penuh untuk layar kecil */
+    }
+
+    /* Penyesuaian pada elemen informasi kontak */
+    .contact-info, .contact-form {
+        width: 100%; /* Lebar penuh */
+        padding: 10px; /* Kurangi padding untuk menyesuaikan dengan layar kecil */
+        margin: 0 auto; /* Pusatkan elemen di tengah */
+        box-sizing: border-box; /* Pastikan padding termasuk dalam lebar elemen */
+        border: none;
+    }
+
+    .contact-section h2 {
+        font-size: 2.2rem; /* Ukuran font sedikit lebih kecil */
+        margin-top: 30px;
+    }
+
+    .contact-section h3 {
+        font-size: 1.4rem;
+        margin-top: 20px;
+    }
+
+    .contact-info .info h3,
+    .contact-info .info-no h3 {
+        font-size: 14px;
+    }
+
+    .contact-info .info p,
+    .contact-info .info-no p,
+    .contact-info .info-no .pp {
+        font-size: 13px;
+    }
+
+    .info-no .line1 {
+        width: 130px;
+        height: 1px;
+        background-color: #ddd;
+        margin: 5px auto; /* Garis horizontal di tengah dengan spasi yang tepat */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .contact-form button {
+        width: 100%; /* Memaksimalkan lebar tombol */
+        font-size: 14px;
+    }
+
+    .map-container iframe {
+        max-height: 200px;
+        width: 93%; /* Menyesuaikan lebar peta */
+    }
+}
+
+
+/* Adjustments for Extra Small Screens */
+@media (max-width: 480px) {
+    .contact-section h2 {
+        margin-top: 50px;
+        font-size: 2rem;
+    }
+
+    .info-no .line1 {
+        border: 0;
+        width: 125px;
+        height: 1px;
+        background-color: #ddd; /* Warna abu-abu muda untuk garis */
+        margin-top: 0px;
+        margin-bottom: 3px;
+    }
+
+    .contact-info .info-no .p {
+        margin-bottom: 35px;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .contact-info .info h3 {
+        font-size: 13px;
+    }
+
+    .contact-info .info p, .contact-info .info .paragraph {
+        font-size: 11px;
+    }
+    
+    .contact-form h3 {
+        margin-left: 5px;
+        margin-top: 0px;
+        font-size: 18px;
+    }
+
+    .contact-form p {
+        font-size: 13px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .contact-form button {
+        font-size: 12px;
+    }
+
+    .map-container iframe {
+        max-height: 180px;
+    }
+
+    .social-icons a {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+/*-------------------------------------------------- FOOTER SECTION --------------------------------------------------*/
+.footer {
+    background-color: #F8F8F8;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang untuk membuatnya menyatu */
+}
+
+.footer p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 550;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px;
+        padding: 15px 0;
+    }
+
+    .footer .social-icons {
+        gap: 15px;
+    }
+
+    .footer .social-icons a {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        font-size: 11px;
+        padding: 10px 0;
+    }
+
+    .footer .social-icons {
+        gap: 10px;
+    }
+
+    .footer .social-icons a {
+        width: 20px;
+        height: 20px;
+    }
+}
