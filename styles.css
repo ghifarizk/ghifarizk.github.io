@@ -273,7 +273,7 @@ body {
 
 @media (max-width: 480px) {
     .text-box h1 {
-        font-size: 1rem; /* Even smaller font size */
+        font-size: 0.9rem; /* Even smaller font size */
     }
 
     .text-box p {
@@ -368,7 +368,7 @@ body {
         text-align: center;
         font-size: 1.8rem;
         margin-left : 0px;
-        margin-top: 150px;
+        margin-top: 130px;
         margin-bottom: 0px;
     }
 
@@ -584,7 +584,7 @@ body {
 @media (max-width: 420px) {
     .container-services h2 {
         font-size: 1.8rem; /* Ukuran font lebih kecil untuk layar lebih sempit */
-        margin-top: 50px; /* Mengurangi margin atas untuk menghemat ruang */
+        margin-top: 20px; /* Mengurangi margin atas untuk menghemat ruang */
         margin-bottom: 5px;
     }
 
