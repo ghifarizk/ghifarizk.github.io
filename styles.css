@@ -1388,7 +1388,7 @@ button:hover {
 
     .contact-info .info h3,
     .contact-info .info-no h3 {
-        font-size: 16px; /* Ukuran font yang lebih besar untuk informasi */
+        font-size: 1rem; /* Ukuran font yang lebih besar untuk informasi */
     }
 
     .contact-info .info p,
@@ -1442,7 +1442,7 @@ button:hover {
 
     .contact-info .info h3,
     .contact-info .info-no h3 {
-        font-size: 14px;
+        font-size: 1rem;
     }
 
     .contact-info .info p,
@@ -1504,7 +1504,7 @@ button:hover {
 
     .contact-info .info h3,
     .contact-info .info-no h3 {
-        font-size: 14px;
+        font-size: 1rem;
     }
 
     .contact-info .info p,
