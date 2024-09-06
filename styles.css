@@ -56,6 +56,7 @@ body {
 
 .navbar img {
     width: 85px;
+    margin-top: 5px;
     margin-left: 5px;
 }
 
@@ -124,6 +125,11 @@ body {
 
 /* Responsive Styling */
 @media (max-width: 768px) {
+    .navbar img {
+        margin-top: 5px;
+        width: 75px;
+    }
+
     .background {
         min-height: 100vh;
         width: 100%;
@@ -267,16 +273,16 @@ body {
 
 @media (max-width: 480px) {
     .text-box h1 {
-        font-size: 15px; /* Even smaller font size */
+        font-size: 1rem; /* Even smaller font size */
     }
 
     .text-box p {
-        font-size: 11px; /* Even smaller font size */
+        font-size: 0.80rem; /* Even smaller font size */
     }
 
     .text-box a {
-        padding: 6px 18px; /* Further reduce padding */
-        font-size: 10px; /* Smaller font size */
+        padding: 10px 20px; /* Further reduce padding */
+        font-size: 12px; /* Smaller font size */
     }
 }
 
@@ -362,14 +368,14 @@ body {
         text-align: center;
         font-size: 1.8rem;
         margin-left : 0px;
-        margin-top: 222px;
+        margin-top: 150px;
         margin-bottom: 0px;
     }
 
     .about-section p {
         text-align: center;
-        font-size: 1rem;
-        max-width: 81%;
+        font-size: 0.95rem;
+        max-width: 82%;
         margin-bottom: 270px;
     }
 }
@@ -505,7 +511,7 @@ body {
     .container-services h2 {
         font-size: 2.5rem; /* Ukuran font lebih kecil untuk judul */
         margin-top: 30px; /* Mengurangi jarak atas */
-        margin-bottom: 10px; /* Memberikan sedikit ruang di bawah */
+        margin-bottom: 5px; /* Memberikan sedikit ruang di bawah */
     }
 
     .container-services p {
@@ -544,12 +550,12 @@ body {
 @media (max-width: 480px) {
     .container-services h2 {
         font-size: 1.8rem; /* Ukuran font lebih kecil untuk layar lebih sempit */
-        margin-top: 130px; /* Mengurangi margin atas untuk menghemat ruang */
-        margin-bottom: 10px;
+        margin-top: 100px; /* Mengurangi margin atas untuk menghemat ruang */
+        margin-bottom: 5px;
     }
 
     .container-services p {
-        font-size: 0.85rem; /* Ukuran font lebih kecil untuk paragraf */
+        font-size: 0.9rem; /* Ukuran font lebih kecil untuk paragraf */
         padding: 0 5px; /* Mengurangi padding samping untuk kesesuaian layar */
         margin-bottom: 15px; /* Mengurangi jarak bawah */
     }
@@ -578,14 +584,8 @@ body {
 @media (max-width: 420px) {
     .container-services h2 {
         font-size: 1.8rem; /* Ukuran font lebih kecil untuk layar lebih sempit */
-        margin-top: 90px; /* Mengurangi margin atas untuk menghemat ruang */
-        margin-bottom: 10px;
-    }
-
-    .container-services p {
-        font-size: 0.85rem; /* Ukuran font lebih kecil untuk paragraf */
-        padding: 0 5px; /* Mengurangi padding samping untuk kesesuaian layar */
-        margin-bottom: 15px; /* Mengurangi jarak bawah */
+        margin-top: 50px; /* Mengurangi margin atas untuk menghemat ruang */
+        margin-bottom: 5px;
     }
 
     .row {
@@ -604,7 +604,7 @@ body {
     }
 
     .about-col p {
-        font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk teks deskripsi */
+        font-size: 0.82rem; /* Ukuran font yang lebih kecil untuk teks deskripsi */
         line-height: 1.4; /* Mengurangi line-height */
     }
 }
@@ -712,6 +712,7 @@ button:hover {
 @media (max-width: 1024px) {
     .container-villa {
         padding: 10px; /* Sedikit lebih besar padding untuk layar medium */
+        padding-top: 0px;
         flex-direction: column; /* Tetap kolom untuk tata letak layar sedang */
         align-items: center; /* Menyelaraskan elemen ke tengah */
     }
@@ -733,7 +734,7 @@ button:hover {
     .gallery-section h2 {
         font-size: 3rem; /* Ukuran font yang lebih besar untuk judul */
         margin-top: 5px; /* Menambah sedikit jarak atas */
-        margin-bottom: 15px; /* Memberikan sedikit lebih ruang di bawah */
+        margin-bottom: 5px; /* Memberikan sedikit lebih ruang di bawah */
     }
 
     .gallery-section p {
@@ -761,6 +762,7 @@ button:hover {
 @media (max-width: 768px) {
     .container-villa {
         padding: 15px; /* Mengurangi padding agar lebih sesuai dengan layar kecil */
+        padding-top: 0px;
         flex-direction: column; /* Mengubah tata letak menjadi kolom */
         align-items: center; /* Menyelaraskan elemen ke tengah */
     }
@@ -782,12 +784,12 @@ button:hover {
     .gallery-section h2 {
         font-size: 2.5rem; /* Ukuran font yang lebih kecil untuk judul */
         margin-top: 0px; /* Mengurangi jarak atas */
-        margin-bottom: 10px; /* Memberikan sedikit ruang di bawah */
+        margin-bottom: 5px; /* Memberikan sedikit ruang di bawah */
     }
 
     .gallery-section p {
         font-size: 1rem; /* Ukuran font lebih kecil untuk paragraf */
-        margin: 0px 50px; /* Mengurangi margin samping */
+        margin: 0px 20px; /* Mengurangi margin samping */
     }
 
     .villa-details h3 {
@@ -810,6 +812,9 @@ button:hover {
 
 @media (max-width: 480px) {
     .container-villa {
+        padding-top: 0px;
+        padding-left: 25px;
+        padding-right: 25px;
         margin-bottom: 100px;
     }
     .villa-card {
@@ -863,6 +868,7 @@ button:hover {
 
 .navbar-galeri img {
     width: 85px;
+    margin-top: 5px;
     margin-left: 5px;
 }
 
@@ -885,7 +891,7 @@ button:hover {
 
 .background-villa-putih,
 .background-villa-limasan {
-    min-height: 55vh;
+    min-height: 50vh;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -989,10 +995,6 @@ button:hover {
     border-radius: 10px;
 }
 
-.carousel-item:hover {
-    transform: scale(1.05);
-}
-
 /* Tombol galeri */
 .carousel-button {
     position: absolute;
@@ -1001,7 +1003,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 7px;
     cursor: pointer;
     z-index: 1000;
     font-size: 24px;
@@ -1068,7 +1070,7 @@ button:hover {
 /* Carousel adjustments for small screens */
 @media (max-width: 480px) {
     .background-villa-putih, .background-villa-limasan {
-        min-height: 30vh;
+        min-height: 25vh;
     }
 
     .container-gallery-fasilitas {
@@ -1126,7 +1128,7 @@ button:hover {
     }
 
     .container-fasilitas h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         text-align: center;
     }
 
@@ -1306,6 +1308,7 @@ button:hover {
 }
 
 .contact-link {
+    font-size: 1rem;
     color: #777; /* Warna link */
     display: inline-block;
     text-decoration: none; /* Hilangkan garis bawah */
@@ -1420,7 +1423,7 @@ button:hover {
 /* Adjustments for Smaller Screens */
 @media (max-width: 768px) {
     .contact-container {
-        width: 81%;
+        width: 80%;
     }
 
     .contact-info {
@@ -1477,7 +1480,7 @@ button:hover {
         flex-direction: column; /* Atur elemen dalam satu kolom */
         padding: 10px; /* Kurangi padding untuk layar kecil */
         margin: 0 auto; /* Pusatkan elemen di tengah */
-        width: 90%; /* Lebar penuh untuk layar kecil */
+        width: 85%; /* Lebar penuh untuk layar kecil */
     }
 
     /* Penyesuaian pada elemen informasi kontak */
@@ -1529,7 +1532,7 @@ button:hover {
 
     .map-container iframe {
         max-height: 200px;
-        width: 93%; /* Menyesuaikan lebar peta */
+        width: 90%; /* Menyesuaikan lebar peta */
     }
 }
 
@@ -1566,7 +1569,7 @@ button:hover {
     }
 
     .contact-info .info p, .contact-info .info .paragraph {
-        font-size: 11px;
+        font-size: 1rem;
     }
     
     .contact-form h3 {
@@ -1576,16 +1579,16 @@ button:hover {
     }
 
     .contact-form p {
-        font-size: 13px;
+        font-size: 1rem;
     }
 
     .contact-form input, .contact-form textarea {
-        font-size: 11px;
+        font-size: 1rem;
         padding: 5px;
     }
 
     .contact-form button {
-        font-size: 12px;
+        font-size: 1rem;
     }
 
     .map-container iframe {
