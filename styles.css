@@ -1541,6 +1541,7 @@ button:hover {
 
     .contact-info .info h3,
     .contact-info .info-no h3 {
+        letter-spacing: 0px;
         font-size: 1rem;
     }
 
