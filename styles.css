@@ -815,12 +815,12 @@ button:hover {
 
     .villa-details h3 {
         font-size: 1.1rem; /* Ukuran font yang lebih kecil untuk judul villa */
-        margin: 5px 0; /* Mengurangi margin bawah */
+        margin: 0px 0; /* Mengurangi margin bawah */
     }
 
     .villa-details p {
         font-size: 1rem; /* Ukuran font lebih kecil untuk detail villa */
-        margin-bottom: 5px; /* Sedikit jarak bawah */
+        margin-bottom: 0px; /* Sedikit jarak bawah */
     }
 
     button {
@@ -851,7 +851,7 @@ button:hover {
     .villa-details .para {
         color: #757575;
         font-size: 0.8rem;
-        margin: 5px 5px;
+        margin: 0px 5px;
     }
 
     .galeri-section p {
@@ -884,7 +884,7 @@ button:hover {
     .villa-details .para {
         color: #757575;
         font-size: 0.78rem;
-        margin: 5px 1px;
+        margin: 0px 1px;
     }
 }
 
