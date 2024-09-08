@@ -1189,7 +1189,6 @@ button:hover {
 
 .contact-section h3 {
     text-align: center;
-    letter-spacing: 3px;
     margin-top: 30px;
     margin-bottom: 0px;
 }
@@ -1536,6 +1535,7 @@ button:hover {
 
     .contact-section h3 {
         font-size: 1.4rem;
+        letter-spacing: 2px;
         margin-top: 20px;
     }
 
