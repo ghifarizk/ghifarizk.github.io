@@ -421,7 +421,7 @@ body {
 
 .container-services p {
     font-size: 1rem;
-    color: #666666; /* Warna teks paragraf */
+    color: #000; /* Warna teks paragraf */
     margin-top: 0px;
     margin-bottom: 30px; /* Ruang di bawah paragraf */
 }
@@ -1202,9 +1202,10 @@ button:hover {
 }
 
 .contact-section .ph {
+    color: #000000;
     font-size: 1rem;
     margin: 0px 30px; /* Mengurangi margin samping */
-    margin-bottom: 10px; /* Ruang di bawah paragraf */
+    margin-bottom: 5px; /* Ruang di bawah paragraf */
 }
 
 .contact-container {
