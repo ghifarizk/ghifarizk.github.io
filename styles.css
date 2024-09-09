@@ -1607,6 +1607,7 @@ button:hover {
     }
     
     .contact-form h3 {
+        letter-spacing: 0px;
         margin-left: 5px;
         margin-top: 0px;
         font-size: 18px;
